@@ -8,6 +8,14 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import VueRouter from 'vue-router';
+
+window.Vue.use(VueRouter);
+
+import DashboardIndex from './components/dashboard/DashboardIndex.vue';
+import DashboardCreate from './components/dashboard/DashboardCreate.vue';
+import DashboardEdit from './components/dashboard/DashboardEdit.vue';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,6 +35,17 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+const routes = [
+    {
+        path: '/',
+        components: {
+            dashboardIndex: DashboardIndex
+        }
+    },
+    {path: '/admin/dashboard/create', component: DashboardCreate, name: 'createDashboard'},
+    {path: '/admin/dashboard/edit/:id', component: DashboardEdit, name: 'editDashboard'},
+]
+
+const router = new VueRouter({ routes })
+
+const app = new Vue({ router }).$mount('#app')
