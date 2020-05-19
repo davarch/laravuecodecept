@@ -46,6 +46,10 @@ const routes = [
     {path: '/admin/dashboard/edit/:id', component: DashboardEdit, name: 'editDashboard'},
 ]
 
-const router = new VueRouter({ routes })
+const router = new VueRouter({
+    //hashbang: false,
+    //mode: 'history', // https://router.vuejs.org/guide/essentials/history-mode.html для того, чтобы убрать слеш в конце
+    routes
+})
 
-const app = new Vue({ router }).$mount('#app')
+const app = new Vue({router}).$mount('#app')

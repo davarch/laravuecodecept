@@ -2172,7 +2172,7 @@ __webpack_require__.r(__webpack_exports__);
       app.dashboards = resp.data;
     })["catch"](function (resp) {
       console.log(resp);
-      alert("Could not load dashboard");
+      alert("Could not load dashboards");
     });
   },
   methods: {
@@ -38187,7 +38187,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "tbody",
-            _vm._l(_vm.dashboards, function(dashboard) {
+            _vm._l(_vm.dashboards, function(dashboard, index) {
               return _c("tr", [
                 _c("td", [_vm._v(_vm._s(dashboard.name))]),
                 _vm._v(" "),
@@ -38222,10 +38222,10 @@ var render = function() {
                       "a",
                       {
                         staticClass: "btn btn-xs btn-danger",
-                        attrs: { href: "/" },
+                        attrs: { href: "#" },
                         on: {
                           click: function($event) {
-                            return _vm.deleteEntry(dashboard.id, _vm.index)
+                            return _vm.deleteEntry(dashboard.id, index)
                           }
                         }
                       },
@@ -53424,6 +53424,8 @@ var routes = [{
   name: 'editDashboard'
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  //hashbang: false,
+  //mode: 'history', // https://router.vuejs.org/guide/essentials/history-mode.html для того, чтобы убрать слеш в конце
   routes: routes
 });
 var app = new Vue({

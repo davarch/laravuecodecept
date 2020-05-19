@@ -18,7 +18,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="dashboard in dashboards">
+                    <tr v-for="dashboard, index in dashboards">
                         <td>{{ dashboard.name }}</td>
                         <td>{{ dashboard.address }}</td>
                         <td>{{ dashboard.website }}</td>
@@ -27,7 +27,7 @@
                             <router-link :to="{name: 'editDashboard', params: {id: dashboard.id}}" class="btn btn-xs btn-default">
                                 Edit
                             </router-link>
-                            <a href="/"
+                            <a href="#"
                                class="btn btn-xs btn-danger"
                                v-on:click="deleteEntry(dashboard.id, index)">
                                 Delete
@@ -56,7 +56,7 @@
                 })
                 .catch(function (resp) {
                     console.log(resp);
-                    alert("Could not load dashboard");
+                    alert("Could not load dashboards");
                 });
         },
         methods: {
