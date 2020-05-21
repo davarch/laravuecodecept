@@ -7,7 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title> @yield('title', 'title')</title>
+
+    <meta name="description" content="@yield('description', 'description')">
+
+    <meta name="keywords" content="@yield('keywords', 'keywords')">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
