@@ -1,6 +1,6 @@
 <?php
 
-use Page\Login;
+use Step\Acceptance\User;
 
 class LoginCest
 {
@@ -8,21 +8,21 @@ class LoginCest
     {
     }
 
-    public function loginAdminTest(AcceptanceTester $I, Login $loginPage)
+    public function loginAdminTest(User $I)
     {
-        $loginPage->loginForRole('admin');
+        $I->loginForRole('admin');
         $I->see('admin');
     }
 
-    public function loginManagerTest(AcceptanceTester $I, Login $loginPage)
+    public function loginManagerTest(User $I)
     {
-        $loginPage->loginForRole('manager');
+        $I->loginForRole('manager');
         $I->see('manager');
     }
 
-    public function loginUserTest(AcceptanceTester $I, Login $loginPage)
+    public function loginUserTest(User $I)
     {
-        $loginPage->loginForRole('user');
+        $I->loginForRole('user');
         $I->see('user');
     }
 }
