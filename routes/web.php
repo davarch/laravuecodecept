@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/{slug}', 'PagesController@other');
 Route::get('/news/{slug}', 'NewsController@detail');
@@ -28,7 +32,3 @@ Route::get('/admin/news', function () {
 Route::get('/admin/pages', function () {
     return view('admin.pages');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
