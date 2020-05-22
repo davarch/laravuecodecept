@@ -16,6 +16,10 @@ import DashboardIndex from './components/dashboard/DashboardIndex.vue';
 import DashboardCreate from './components/dashboard/DashboardCreate.vue';
 import DashboardEdit from './components/dashboard/DashboardEdit.vue';
 
+import NewsIndex from './components/admin/news/NewsIndex.vue';
+import NewsCreate from './components/admin/news/NewsCreate.vue';
+import NewsEdit from './components/admin/news/NewsEdit.vue';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -27,7 +31,7 @@ import DashboardEdit from './components/dashboard/DashboardEdit.vue';
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -39,11 +43,15 @@ const routes = [
     {
         path: '/',
         components: {
-            dashboardIndex: DashboardIndex
+            dashboardIndex: DashboardIndex,
+            newsIndex: NewsIndex
         }
     },
     {path: '/admin/dashboard/create', component: DashboardCreate, name: 'createDashboard'},
     {path: '/admin/dashboard/edit/:id', component: DashboardEdit, name: 'editDashboard'},
+
+    {path: '/admin/news/create', component: NewsCreate, name: 'createNews'},
+    {path: '/admin/news/edit/:id', component: NewsEdit, name: 'editNews'},
 ]
 
 const router = new VueRouter({

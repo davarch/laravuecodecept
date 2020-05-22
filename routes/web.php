@@ -15,9 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/{slug}', 'PagesController@other');
+Route::get('/news/{slug}', 'NewsController@detail');
 
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
+});
+
+Route::get('/admin/news', function () {
+    return view('admin.news');
+});
+
+Route::get('/admin/pages', function () {
+    return view('admin.pages');
 });
 
 Auth::routes();

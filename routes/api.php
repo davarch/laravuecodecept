@@ -23,3 +23,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'], function () {
     Route::resource('dashboard', 'DashboardController', ['except' => ['create', 'edit']]);
 });
+
+Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'], function () {
+    Route::resource('news', 'NewsController', ['except' => ['create', 'edit']]);
+});

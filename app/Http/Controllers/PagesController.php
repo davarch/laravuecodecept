@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\News;
 use App\Models\Pages;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -41,8 +42,15 @@ class PagesController extends Controller {
 
         $page = Pages::where('url', $slug)->first();
 
+        $posts = false;
+
+        if($slug == 'news') {
+            $posts = News::all();
+        }
+
         if ($page) {
             return view($slug, [
+                'posts' => $posts ? $posts : '',
                 'name' => $page->name,
                 'content' => $page->content,
                 'meta_title' => $page->meta_title ? $page->meta_title : $page->name,
