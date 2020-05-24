@@ -27,3 +27,7 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'],
 Route::group(['prefix' => '/admin', 'namespace' => 'Api\Admin', 'as' => 'api.'], function () {
     Route::resource('news', 'NewsController', ['except' => ['create', 'edit']]);
 });
+
+Route::group(['prefix' => '/client', 'namespace' => 'Api\Client', 'as' => 'api.'], function () {
+    Route::resource('comments', 'CommentsController', ['except' => ['create', 'edit']]);
+});

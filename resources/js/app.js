@@ -20,6 +20,10 @@ import NewsIndex from './components/admin/news/NewsIndex.vue';
 import NewsCreate from './components/admin/news/NewsCreate.vue';
 import NewsEdit from './components/admin/news/NewsEdit.vue';
 
+import CommentIndex from './components/client/comments/CommentIndex.vue';
+import CommentCreate from './components/client/comments/CommentCreate.vue';
+import CommentEdit from './components/client/comments/CommentEdit.vue';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -44,7 +48,8 @@ const routes = [
         path: '/',
         components: {
             dashboardIndex: DashboardIndex,
-            newsIndex: NewsIndex
+            newsIndex: NewsIndex,
+            indexComment: CommentIndex
         }
     },
     {path: '/admin/dashboard/create', component: DashboardCreate, name: 'createDashboard'},
@@ -52,6 +57,9 @@ const routes = [
 
     {path: '/admin/news/create', component: NewsCreate, name: 'createNews'},
     {path: '/admin/news/edit/:id', component: NewsEdit, name: 'editNews'},
+
+    {path: '/comments/comment/create', component: CommentCreate, name: 'createComment'},
+    {path: '/comments/comment/edit/:id', component: CommentEdit, name: 'editComment'},
 ]
 
 const router = new VueRouter({

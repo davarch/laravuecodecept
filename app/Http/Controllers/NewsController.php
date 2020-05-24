@@ -11,6 +11,8 @@ class NewsController extends Controller
         $post = News::where('url', $slug)->first();
 
         return view('detail.news', [
+            'id_post' => $post->id,
+            'url' => $post->url,
             'name' => $post->name,
             'content' => $post->content,
             'meta_title' => $post->meta_title ? $post->meta_title : $post->name,
