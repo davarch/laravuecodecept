@@ -7,7 +7,7 @@
         <div class="panel panel-default">
             <h1 class="panel-heading">Редактирование новости</h1>
             <div class="panel-body">
-                <form v-on:submit="saveForm().prevent">
+                <form v-on:submit.prevent="saveForm()">
                     <div class="row">
                         <div class="col-md-8 form-group">
                             <label class="control-label">Название</label>
