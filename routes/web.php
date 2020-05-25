@@ -21,14 +21,17 @@ Route::get('/', 'PagesController@index')->name('index');
 Route::get('/{slug}', 'PagesController@other');
 Route::get('/news/{slug}', 'NewsController@detail');
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-});
 
-Route::get('/admin/news', function () {
-    return view('admin.news');
-});
-
-Route::get('/admin/pages', function () {
-    return view('admin.pages');
+Route::group(['prefix' => 'admin'], function () {
+    Route::middleware('role:access')->group(function (){
+        Route::get('news', function () {
+            return view('admin.news');
+        });
+        Route::get('dashboard', function () {
+            return view('admin.dashboard');
+        });
+        Route::get('pages', function () {
+            return view('admin.pages');
+        });
+    });
 });
