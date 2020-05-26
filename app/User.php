@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Models\Role;
+use App\Models\Todo;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -47,5 +48,10 @@ class User extends Authenticatable
     public function isRole($role)
     {
         return (boolean)$this->roles->where('name', $role)->count();
+    }
+
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
     }
 }

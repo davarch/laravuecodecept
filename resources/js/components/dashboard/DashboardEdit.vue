@@ -48,7 +48,7 @@
             let app = this;
             let id = app.$route.params.id;
             app.dashboardId = id;
-            axios.get('/api/admin/dashboard/' + id)
+            axios.get('/admin/dashboard/' + id)
                 .then(function (resp) {
                     app.dashboard = resp.data;
                 })
@@ -72,7 +72,7 @@
                 event.preventDefault();
                 var app = this;
                 var newDashboard = app.dashboard;
-                axios.patch('/api/admin/dashboard/' + app.dashboardId, newDashboard)
+                axios.patch('/admin/dashboard/' + app.dashboardId, newDashboard)
                     .then(function (resp) {
                         app.$router.replace('/');
                     })

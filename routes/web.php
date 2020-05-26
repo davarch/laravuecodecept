@@ -33,5 +33,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('pages', function () {
             return view('admin.pages');
         });
+        Route::get('todos', function () {
+            return view('admin.todos');
+        });
     });
 });

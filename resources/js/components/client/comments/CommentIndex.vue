@@ -39,7 +39,7 @@
         mounted() {
             let app = this;
             let id_post = this.id_post;
-            axios.get('/api/client/comments')
+            axios.get('/client/comments')
                 .then(function (resp) {
                     app.comments = resp.data.filter(e => e.id_post === id_post);
                 })
@@ -52,7 +52,7 @@
             deleteEntry(id, index) {
                 if (confirm("Вы уверены, что хотите удалить коммент?")) {
                     let app = this;
-                    axios.delete('/api/client/comments/' + id)
+                    axios.delete('/client/comments/' + id)
                         .then(function (resp) {
                             app.comments.splice(index, 1);
                         })

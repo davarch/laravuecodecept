@@ -20,6 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['namespace' => 'Api'], function () {
+
+    Route::group(['namespace' => 'Admin'], function () {
+        Route::resource('todos', 'TodosController', ['except' => ['create', 'edit']])->middleware('auth:api');
+    });
+
     Route::group(['namespace' => 'Auth'], function () {
         Route::post('register', 'RegisterController');
         Route::post('login', 'LoginController');

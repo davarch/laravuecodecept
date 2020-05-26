@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NewsTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
         $this->call(RoleTableSeeder::class);
+        $this->call(TodosTableSeeder::class);
     }
 }
