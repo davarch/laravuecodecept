@@ -50,7 +50,7 @@
         },
         mounted() {
             var app = this;
-            axios.get('/api/admin/dashboard')
+            axios.get('/admin/dashboard')
                 .then(function (resp) {
                     app.dashboards = resp.data;
                 })
@@ -63,7 +63,7 @@
             deleteEntry(id, index) {
                 if (confirm("Do you really want to delete it?")) {
                     var app = this;
-                    axios.delete('/api/admin/dashboard/' + id)
+                    axios.delete('/admin/dashboard/' + id)
                         .then(function (resp) {
                             app.dashboards.splice(index, 1);
                         })

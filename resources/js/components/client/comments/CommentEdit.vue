@@ -23,7 +23,7 @@
             let app = this;
             let id = app.$route.params.id;
             app.postId = id;
-            axios.get('/api/client/comments/' + id)
+            axios.get('/client/comments/' + id)
                 .then(function (resp) {
                     app.post = resp.data;
                 })
@@ -48,7 +48,7 @@
             saveForm() {
                 let app = this;
                 let newPost = app.post;
-                axios.patch('/api/client/comments/' + app.postId, newPost)
+                axios.patch('/client/comments/' + app.postId, newPost)
                     .then(function (resp) {
                         app.$router.replace('/');
                     })

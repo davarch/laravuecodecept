@@ -73,7 +73,7 @@
             saveForm() {
                 let app = this;
                 let newPost = app.post;
-                axios.post('/api/admin/news', newPost)
+                axios.post('/admin/news', newPost)
                     .then(function (resp) {
                         app.$router.push({path: '/'});
                     })

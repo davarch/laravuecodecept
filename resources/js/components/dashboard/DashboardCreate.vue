@@ -60,7 +60,7 @@
                 event.preventDefault();
                 var app = this;
                 var newDashboard = app.dashboard;
-                axios.post('/api/admin/dashboard', newDashboard)
+                axios.post('/admin/dashboard', newDashboard)
                     .then(function (resp) {
                         app.$router.push({path: '/'});
                     })

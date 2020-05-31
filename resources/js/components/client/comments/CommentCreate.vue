@@ -36,7 +36,7 @@
                 let app = this;
                 let newPost = app.post;
 
-                axios.post('/api/client/comments', newPost)
+                axios.post('/client/comments', newPost)
                     .then(function (resp) {
                         app.$router.push({path: '/'});
                     })

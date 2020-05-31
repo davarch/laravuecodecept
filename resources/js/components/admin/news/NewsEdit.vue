@@ -60,7 +60,7 @@
             let app = this;
             let id = app.$route.params.id;
             app.postId = id;
-            axios.get('/api/admin/news/' + id)
+            axios.get('/admin/news/' + id)
                 .then(function (resp) {
                     app.post = resp.data;
                 })
@@ -85,7 +85,7 @@
             saveForm() {
                 let app = this;
                 let newPost = app.post;
-                axios.patch('/api/admin/news/' + app.postId, newPost)
+                axios.patch('/admin/news/' + app.postId, newPost)
                     .then(function (resp) {
                         app.$router.replace('/');
                     })

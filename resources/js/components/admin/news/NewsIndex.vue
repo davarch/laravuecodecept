@@ -54,7 +54,7 @@
         },
         mounted() {
             let app = this;
-            axios.get('/api/admin/news')
+            axios.get('/admin/news')
                 .then(function (resp) {
                     app.posts = resp.data;
                 })
@@ -67,7 +67,7 @@
             deleteEntry(id, index) {
                 if (confirm("Вы уверены, что хотите удалить новость?")) {
                     let app = this;
-                    axios.delete('/api/admin/news/' + id)
+                    axios.delete('/admin/news/' + id)
                         .then(function (resp) {
                             app.posts.splice(index, 1);
                         })
