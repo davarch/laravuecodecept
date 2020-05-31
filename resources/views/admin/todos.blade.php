@@ -1,17 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">Задачи</div>
-                    <div class="card-body">
-                        <router-view name="indexTodos"></router-view>
-                        <router-view></router-view>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <router-view name="indexTodos"></router-view>
+    <router-view></router-view>
 @endsection

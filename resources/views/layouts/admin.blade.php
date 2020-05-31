@@ -21,7 +21,7 @@
 </head>
 <body>
 <div id="app">
-    <adide class="sidebar">
+    <aside class="sidebar">
 
         <div class="sidebar__header">
             <div class="sidebar__header-logo">
@@ -269,7 +269,7 @@
                 </a>
             </div>
         </nav>
-    </adide>
+    </aside>
 
     <header class="header">
         <div class="header__menu">
