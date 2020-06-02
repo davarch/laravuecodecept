@@ -10,6 +10,8 @@ import store from './store/store';
 window.Vue.use(VueRouter);
 
 const router = new VueRouter({
+    hashbang: false,
+    mode: 'history',
     routes
 })
 

@@ -13,19 +13,21 @@ const routes = [
     {
         path: '/',
         components: {
-            dashboardIndex: DashboardIndex,
-            newsIndex: NewsIndex,
-            indexComment: CommentIndex,
-            indexTodos: TodosIndex,
+            //indexComment: CommentIndex,
         }
     },
 
+    {path: '/admin/dashboard', component: DashboardIndex, name: 'dashboardIndex'},
     {path: '/admin/dashboard/create', component: DashboardCreate, name: 'createDashboard'},
     {path: '/admin/dashboard/edit/:id', component: DashboardEdit, name: 'editDashboard'},
 
+    {path: '/admin/news', component: NewsIndex, name: 'newsIndex'},
     {path: '/admin/news/create', component: NewsCreate, name: 'createNews'},
     {path: '/admin/news/edit/:id', component: NewsEdit, name: 'editNews'},
 
+    {path: '/admin/todos', component: TodosIndex, name: 'indexTodos'},
+
+    {path: '/news/*/', component: CommentIndex, name: 'indexComment'},
     {path: '/comments/comment/create', component: CommentCreate, name: 'createComment'},
     {path: '/comments/comment/edit/:id', component: CommentEdit, name: 'editComment'},
 ]

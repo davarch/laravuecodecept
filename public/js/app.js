@@ -57356,6 +57356,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 window.Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  hashbang: false,
+  mode: 'history',
   routes: _routes__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 var app = new Vue({
@@ -58158,12 +58160,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [{
   path: '/',
-  components: {
-    dashboardIndex: _components_dashboard_DashboardIndex__WEBPACK_IMPORTED_MODULE_0__["default"],
-    newsIndex: _components_admin_news_NewsIndex__WEBPACK_IMPORTED_MODULE_1__["default"],
-    indexComment: _components_client_comments_CommentIndex__WEBPACK_IMPORTED_MODULE_2__["default"],
-    indexTodos: _components_admin_todos_TodosIndex__WEBPACK_IMPORTED_MODULE_9__["default"]
+  components: {//indexComment: CommentIndex,
   }
+}, {
+  path: '/admin/dashboard',
+  component: _components_dashboard_DashboardIndex__WEBPACK_IMPORTED_MODULE_0__["default"],
+  name: 'dashboardIndex'
 }, {
   path: '/admin/dashboard/create',
   component: _components_dashboard_DashboardCreate__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -58173,6 +58175,10 @@ var routes = [{
   component: _components_dashboard_DashboardEdit__WEBPACK_IMPORTED_MODULE_4__["default"],
   name: 'editDashboard'
 }, {
+  path: '/admin/news',
+  component: _components_admin_news_NewsIndex__WEBPACK_IMPORTED_MODULE_1__["default"],
+  name: 'newsIndex'
+}, {
   path: '/admin/news/create',
   component: _components_admin_news_NewsCreate__WEBPACK_IMPORTED_MODULE_5__["default"],
   name: 'createNews'
@@ -58180,6 +58186,14 @@ var routes = [{
   path: '/admin/news/edit/:id',
   component: _components_admin_news_NewsEdit__WEBPACK_IMPORTED_MODULE_6__["default"],
   name: 'editNews'
+}, {
+  path: '/admin/todos',
+  component: _components_admin_todos_TodosIndex__WEBPACK_IMPORTED_MODULE_9__["default"],
+  name: 'indexTodos'
+}, {
+  path: '/news/*/',
+  component: _components_client_comments_CommentIndex__WEBPACK_IMPORTED_MODULE_2__["default"],
+  name: 'indexComment'
 }, {
   path: '/comments/comment/create',
   component: _components_client_comments_CommentCreate__WEBPACK_IMPORTED_MODULE_7__["default"],
